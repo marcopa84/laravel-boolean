@@ -13,10 +13,10 @@
                 <div class="boolean__navbar__items collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="boolean__navbar__item nav-item">
-                            <a class="nav-link" href="https://www.boolean.careers">Home</a>
+                            <a class="nav-link" href="{{}}">Home</a>
                         </li>
                         <li class="boolean__navbar__item nav-item">
-                            <a class="nav-link" href="https://www.boolean.careers/corso/full-time">Corso</a>
+                            <a class="nav-link" href="#">Corso</a>
                         </li>
                         
                         <li class="boolean__navbar__item nav-item active">
@@ -24,10 +24,10 @@
                         </li>
                         
                         <li class="boolean__navbar__item nav-item">
-                            <a class="nav-link" href="https://www.boolean.careers/lezione-gratuita">Lezione Gratuita</a>
+                            <a class="nav-link" href="#">Lezione Gratuita</a>
                         </li>
                         <li class="boolean__navbar__cta nav-item">
-                            <a track="Click-IscrizioneForm" class="nav-link" href="https://www.boolean.careers/iscriviti">Candidati ora</a>
+                            <a track="Click-IscrizioneForm" class="nav-link" href="#">Candidati ora</a>
                         </li>
                         
                     </ul>
@@ -38,7 +38,11 @@
 </header>
 
 <main>
-    @yield('content')
+    <div class="col-12">
+        <div class="row">
+            @yield('content')
+        </div>
+    </div>
 </main>
 
 <footer class="bg_blue">
