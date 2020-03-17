@@ -1,7 +1,7 @@
 @include('layouts.partials._header')
 
 
-<header>
+<header class="fixed-top">
    <div id="navbarContainer">
         <div class="container-fluid">
             <nav class="boolean__navbar navbar navbar-expand-lg navbar-light bg-light">
@@ -13,14 +13,14 @@
                 <div class="boolean__navbar__items collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="boolean__navbar__item nav-item">
-                            <a class="nav-link" href="{{}}">Home</a>
+                            <a class="nav-link" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="boolean__navbar__item nav-item">
                             <a class="nav-link" href="#">Corso</a>
                         </li>
                         
                         <li class="boolean__navbar__item nav-item active">
-                            <a class="nav-link" href="https://www.boolean.careers/carriere">Dopo il corso</a>
+                            <a class="nav-link" href="{{route('students')}}">Dopo il corso</a>
                         </li>
                         
                         <li class="boolean__navbar__item nav-item">
@@ -37,7 +37,7 @@
     </div>
 </header>
 
-<main>
+<main class="margin-top-90">
     <div class="col-12">
         <div class="row">
             @yield('content')

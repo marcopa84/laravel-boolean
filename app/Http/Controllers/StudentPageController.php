@@ -8,6 +8,7 @@ class StudentPageController extends Controller
 {
     public function home()
     {
-        return view('students');
+        $students = config('students.students');
+        return view('students', $students);
     }
 }
