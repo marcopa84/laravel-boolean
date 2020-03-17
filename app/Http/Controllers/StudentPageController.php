@@ -9,6 +9,6 @@ class StudentPageController extends Controller
     public function home()
     {
         $students = config('students.students');
-        return view('students', $students);
+        return view('students', compact('students'));
     }
 }
