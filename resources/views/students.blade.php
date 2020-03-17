@@ -9,13 +9,14 @@
         </div>
         <div class="boolean__career__salary__body">
                 
-            @foreach ($students as $student)
+            @foreach ($students as $key => $student)
                 <div class="boolean__career__student">
                     <button class="open-card"><i class="fas fa-plus"></i></button>
                     <img src={{$student['img']}} alt={{$student['name']}}>
                     <h3>{{$student['name']}} <span class="age">({{$student['age']}} anni)</span></h3>
                     <span>  Assunt{{ ($student['genre'] == 'f') ? 'a' : 'o' }}  da {{$student['company']}} come {{$student['role']}} </span>
                     <a target="_blank" href={{$student['sociallink']}}><i class="fab fa-linkedin"></i></a>
+                    <a id="scopri" target="_blank" href={{route('student', ['id' => $key])}}><i class="fas fa-plus"></i></a>
                     <p>{{$student['description']}}</p>
                 </div>
             @endforeach
