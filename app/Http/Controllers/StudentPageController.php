@@ -12,9 +12,13 @@ class StudentPageController extends Controller
         return view('students', compact('students'));
     }
     
-    public function show()
+    public function show($id)
     {
         $students = config('students.students');
-        return view('student', compact('students'));
+        if(! array_key_exists($id, $students) ){
+            dd('studente non trovato');
+        } 
+        $student = $students[$id];
+        return view('student', compact('student'));
     }
 }
