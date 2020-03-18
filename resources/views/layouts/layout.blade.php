@@ -86,7 +86,7 @@
 </footer>
 
 
-
+ @yield('script')
     
 
 @include('layouts.partials._footer')
