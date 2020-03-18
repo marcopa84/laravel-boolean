@@ -6,6 +6,21 @@
    <div class="container">
         <div class="boolean__career__salary__head">
             <h2 class="max-title">I nostri ex studenti su LinkedIn</h2>
+            <label for="agefilter">Filtra per età</label>
+            <select name="agefilter" id="agefilter">
+                <option value="all">all</option>
+                @for ($i = 0; $i < count($agearray); $i++)
+                    <option value="{{$agearray[$i]}}">{{$agearray[$i]}}</option>
+                @endfor
+            </select>
+            
+            <label for="rolefilter">Filtra per professione</label>
+            <select name="rolefilter" id="rolefilter">
+                <option value="all">all</option>
+                @for ($i = 0; $i < count($rolearray); $i++)
+                    <option value="{{$rolearray[$i]}}">{{$rolearray[$i]}}</option>
+                @endfor
+            </select>
         </div>
         <div class="boolean__career__salary__body">
                 
