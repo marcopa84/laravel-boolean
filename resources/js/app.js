@@ -5,11 +5,9 @@ $ = require('jquery');
 $(document).ready(function () {
     $('#agefilter').change(function () {
         console.log($(this).val());
-        console.log(window.location.origin + "/students/age");
-
         $.ajax(
             {
-                url: window.location.origin + "/students/age",
+                url: window.location.origin + "/api/students/age/",
                 method: "POST",
                 data: {
                     'age': $(this).val()
@@ -17,7 +15,7 @@ $(document).ready(function () {
                 success: function (data, stato) {
                     console.log(data);
                 },
-                error: function (richiesta, stato, errori) {
+                error: function (richiesta, stato, errore) {
                     alert("E' avvenuto un errore. " + errore);
                 }
             }
@@ -26,6 +24,22 @@ $(document).ready(function () {
 
     $('#rolefilter').change(function () {
         console.log($(this).val());
+
+        $.ajax(
+            {
+                url: window.location.origin + "/api/students/role/",
+                method: "POST",
+                data: {
+                    'role': $(this).val()
+                },
+                success: function (data, stato) {
+                    console.log(data);
+                },
+                error: function (richiesta, stato, errore) {
+                    alert("E' avvenuto un errore. " + errore);
+                }
+            }
+        );
     });
 
 });

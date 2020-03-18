@@ -29897,9 +29897,8 @@ $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 $(document).ready(function () {
   $('#agefilter').change(function () {
     console.log($(this).val());
-    console.log(window.location.origin + "/students/age");
     $.ajax({
-      url: window.location.origin + "/students/age",
+      url: window.location.origin + "/api/students/age/",
       method: "POST",
       data: {
         'age': $(this).val()
@@ -29907,13 +29906,26 @@ $(document).ready(function () {
       success: function success(data, stato) {
         console.log(data);
       },
-      error: function error(richiesta, stato, errori) {
+      error: function error(richiesta, stato, errore) {
         alert("E' avvenuto un errore. " + errore);
       }
     });
   });
   $('#rolefilter').change(function () {
     console.log($(this).val());
+    $.ajax({
+      url: window.location.origin + "/api/students/role/",
+      method: "POST",
+      data: {
+        'role': $(this).val()
+      },
+      success: function success(data, stato) {
+        console.log(data);
+      },
+      error: function error(richiesta, stato, errore) {
+        alert("E' avvenuto un errore. " + errore);
+      }
+    });
   });
 });
 
