@@ -18,9 +18,13 @@ class StudentController extends Controller
         $data = $request->all();
         $students = config('students.students');
         
-        foreach ($students as $student) {
-            if ($student['age'] == $data['age']) {
-               $result['response'][] = $student;
+        if ($data['age'] == 'all'){
+            $result['response'] = $students;
+        }else{
+            foreach ($students as $student) {
+                if ($student['age'] == $data['age']) {
+                    $result['response'][] = $student;
+                }
             }
         }
         return response()->json($result);
@@ -35,12 +39,16 @@ class StudentController extends Controller
         $data = $request->all();
         $students = config('students.students');
 
-
-        foreach ($students as $student) {
-            if ($student['role'] == $data['role']) {
-                $result['response'][] = $student;
+        if ($data['role'] == 'all'){
+            $result['response'] = $students; 
+        }else{
+            foreach ($students as $student) {
+                if ($student['role'] == $data['role']) {
+                    $result['response'][] = $student;
+                }
             }
         }
+        
         return response()->json($result);
 
     }
