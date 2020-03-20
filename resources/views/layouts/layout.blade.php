@@ -12,14 +12,14 @@
                 </button>
                 <div class="boolean__navbar__items collapse navbar-collapse">
                     <ul class="navbar-nav">
-                        <li class="boolean__navbar__item nav-item">
+                        <li class="boolean__navbar__item nav-item {{(Route::currentRouteName() == 'home') ? "active":""}}">
                             <a class="nav-link" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="boolean__navbar__item nav-item">
                             <a class="nav-link" href="#">Corso</a>
                         </li>
                         
-                        <li class="boolean__navbar__item nav-item active">
+                        <li class="boolean__navbar__item nav-item {{(Request::route()->getName() == 'students') ? "active":""}}">
                             <a class="nav-link" href="{{route('students')}}">Dopo il corso</a>
                         </li>
                         

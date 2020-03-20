@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
 
 class StudentPageController extends Controller
 {
@@ -35,5 +36,15 @@ class StudentPageController extends Controller
         } 
         $student = $students[$id];
         return view('student', compact('student'));
+    }
+    
+    public function db()
+    {
+        $students = Student::all();
+        
+        
+        dd($students);
+
+        /* return view('student', compact('student')); */
     }
 }
